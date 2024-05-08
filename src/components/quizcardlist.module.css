@@ -1,0 +1,5 @@
+.quizListContainer {
+  display: grid;
+  gap: 50px 50px;
+  grid-template-columns: auto auto;
+}

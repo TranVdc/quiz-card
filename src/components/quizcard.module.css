@@ -1,0 +1,53 @@
+.quizCardContainer {
+  background-color: #ffff;
+  min-height: 300px;
+  width: auto;
+  box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
+  margin-top: 8px;
+  border-radius: 4px;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.quizCardInner {
+  /* padding: 10px; */
+}
+
+.quizCardContainer:hover .quizCardInner {
+  transform: rotateY(180deg);
+}
+
+.quizCardInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /* Ensures children elements are rendered in a 3D space */
+}
+
+.quizCardFront {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Hides the backface of the element */
+
+  background-color: #ffff;
+}
+
+.quizCardBack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Hides the backface of the element */
+
+  background-color: cadetblue;
+  transform: rotateY(180deg);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: red;
+  font-size: 2em;
+  font-weight: bolder;
+}
