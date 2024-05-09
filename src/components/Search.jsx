@@ -62,27 +62,54 @@ export default function Search({ quizList, setquizList }) {
 
   return (
     <div className="container">
-      <form className={styles.searchForm}>
-        <label htmlFor="">Select Category</label>
-        <select name="categories" ref={categoriesRef}>
-          <option value="">Any Category</option>
-          {categoryList.map((category) => (
-            <option value={category.id}>{category.name}</option>
-          ))}
-        </select>
-
-        <label htmlFor="">Select Difficulty</label>
-        <select name="difficulty" ref={difficultyRef}>
-          <option value="">Any Difficulty</option>
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-
-        <label htmlFor="">Number of Questions</label>
-        <input type="text" name="numberOfCount" ref={numberOfCountRef} />
-        <button onClick={(e) => HandleClick(e)}>Show Quiz</button>
-      </form>
+      <div className="row">
+        <form className={styles.searchForm}>
+          <div className="form-group">
+            <label htmlFor="">Select Category</label>
+            <select
+              className="form-control"
+              name="categories"
+              ref={categoriesRef}
+            >
+              <option value="">Any Category</option>
+              {categoryList.map((category) => (
+                <option value={category.id}>{category.name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="">Select Difficulty</label>
+            <select
+              className="form-control"
+              name="difficulty"
+              ref={difficultyRef}
+            >
+              <option value="">Any Difficulty</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="">Number of Questions</label>
+            <input
+              className="form-control"
+              type="number"
+              name="numberOfCount"
+              ref={numberOfCountRef}
+            />
+          </div>
+          <div className="form-group">
+            <button
+              type="button"
+              className="btn btn-primary btn-showQuiz"
+              onClick={(e) => HandleClick(e)}
+            >
+              Show Quiz
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
