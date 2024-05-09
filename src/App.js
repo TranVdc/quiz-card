@@ -3,6 +3,10 @@ import "./App.css";
 import QuizCardList from "./components/QuizCardList";
 import { createElement, useEffect, useState } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
+import Popper from "popper.js";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function App() {
   const [quizList, setquizList] = useState();
@@ -45,8 +49,14 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="text-uppercase font-weight-bold text-center alert alert-success">
+        Welcome to Quiz App
+      </h1>
       {isLoading ? (
-        "Loading 🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃, Please wait"
+        <div class="alert alert-primary text-center" role="alert">
+          Loading 🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃. Please wait reload page if it doesn't
+          work after 3 seconds.
+        </div>
       ) : (
         <QuizCardList quizList={quizList} />
       )}
