@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import $ from "jquery";
 import Popper from "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import Search from "./components/Search";
 
 function App() {
   const [quizList, setquizList] = useState();
@@ -53,12 +54,15 @@ function App() {
         Welcome to Quiz App
       </h1>
       {isLoading ? (
-        <div class="alert alert-primary text-center" role="alert">
+        <div className="alert alert-primary text-center" role="alert">
           Loading 🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃. Please wait reload page if it doesn't
           work after 3 seconds.
         </div>
       ) : (
-        <QuizCardList quizList={quizList} />
+        <>
+          <Search quizList={quizList} setquizList={setquizList} />
+          <QuizCardList quizList={quizList} />
+        </>
       )}
     </div>
   );
