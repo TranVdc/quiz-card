@@ -3,3 +3,12 @@
   gap: 50px 50px;
   grid-template-columns: auto auto;
 }
+
+/* For ipad: */
+@media screen and (max-width: 992px) {
+  .quizListContainer {
+    display: grid;
+    gap: 50px 50px;
+    grid-template-columns: auto;
+  }
+}
