@@ -8,12 +8,14 @@ import $ from "jquery";
 import Popper from "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Search from "./components/Search";
-
 import NavBar from "./components/NavBar";
+import { useAuth0 } from "@auth0/auth0-react";
+import QuizListExercise from "./components/QuizListExercise";
 
 function App() {
   const [quizList, setquizList] = useState();
   const [isLoading, setisLoading] = useState(true);
+  const { user, isAuthenticated } = useAuth0();
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "text/plain; charset=UTF-8");
@@ -65,7 +67,11 @@ function App() {
       ) : (
         <>
           <Search quizList={quizList} setquizList={setquizList} />
-          <QuizCardList quizList={quizList} />
+          {!isAuthenticated ? (
+            <QuizCardList quizList={quizList} />
+          ) : (
+            <QuizListExercise quizList={quizList} />
+          )}
         </>
       )}
     </div>
