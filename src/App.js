@@ -9,6 +9,8 @@ import Popper from "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Search from "./components/Search";
 
+import NavBar from "./components/NavBar";
+
 function App() {
   const [quizList, setquizList] = useState();
   const [isLoading, setisLoading] = useState(true);
@@ -53,6 +55,8 @@ function App() {
       <h1 className="text-uppercase font-weight-bold text-center alert alert-success">
         Welcome to Quiz App
       </h1>
+
+      <NavBar />
       {isLoading ? (
         <div className="alert alert-primary text-center" role="alert">
           Loading 🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃🔃. Please wait reload page if it doesn't
